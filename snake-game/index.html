@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Snake</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel">
+        <h1 class="title">Neon Snake</h1>
+        <p class="subtitle">Collect sparks. Avoid collisions. Keep the chain alive.</p>
+
+        <div class="stats">
+          <article class="stat-card">
+            <p class="label">Score</p>
+            <p id="score" class="value">0</p>
+          </article>
+          <article class="stat-card">
+            <p class="label">Best</p>
+            <p id="best" class="value">0</p>
+          </article>
+          <article class="stat-card">
+            <p class="label">Speed</p>
+            <p id="speed" class="value">1x</p>
+          </article>
+        </div>
+
+        <div class="actions">
+          <button id="startBtn" class="action">Start / Restart</button>
+          <button id="pauseBtn" class="action secondary">Pause</button>
+        </div>
+
+        <p class="hint">Use Arrow keys or WASD. On mobile, use the control pad or swipe on the board.</p>
+      </section>
+
+      <section class="board-wrap">
+        <canvas id="game" width="528" height="528" aria-label="Snake game board"></canvas>
+        <div id="overlay" class="overlay hidden">
+          <p id="overlayTitle" class="overlay-title">Game Over</p>
+          <p id="overlayText" class="overlay-text">Press Start to play again.</p>
+        </div>
+      </section>
+    </main>
+
+    <section class="mobile-controls" aria-label="Mobile controls">
+      <button data-dir="up" class="control">Up</button>
+      <div class="middle-controls">
+        <button data-dir="left" class="control">Left</button>
+        <button data-dir="down" class="control">Down</button>
+        <button data-dir="right" class="control">Right</button>
+      </div>
+    </section>
+
+    <script src="game.js"></script>
+  </body>
+</html>
